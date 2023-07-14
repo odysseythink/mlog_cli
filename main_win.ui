@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CMainWin</class>
+ <widget class="QMainWindow" name="CMainWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>933</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CMainWin</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>日志应用运行地址:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="m_iMlogAddrEdit">
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>日志最低等级:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="m_iLogLevelEdit">
+          <item>
+           <property name="text">
+            <string>debug</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>info</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>warning</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>error</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="m_iShowAdvancedSettingCBox">
+          <property name="text">
+           <string>高级设置</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="m_iAdvancedSettingGBox">
+        <property name="title">
+         <string>高级设置</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>监控文件:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="m_iLogMonitorFilenameEdit">
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>监控函数:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="m_iLogMonitorFuncnameEdit">
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>过滤信息:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="m_iLogMonitorFilterEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="m_iLogMonitorParamSetBtn">
+           <property name="maximumSize">
+            <size>
+             <width>36</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>设置</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QTreeView" name="m_iFacilityView">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="headerHidden">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="m_iLogMsgEdit"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>933</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_iFacilityView</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>CMainWin</receiver>
+   <slot>__OnMlogDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_iMlogAddrEdit</sender>
+   <signal>editingFinished()</signal>
+   <receiver>CMainWin</receiver>
+   <slot>__OnMlogAddrEdited()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_iShowAdvancedSettingCBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>CMainWin</receiver>
+   <slot>__OnShowAdvancedSetting(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>560</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_iLogLevelEdit</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>CMainWin</receiver>
+   <slot>__OnLogLevelChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>63</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_iLogMonitorParamSetBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>CMainWin</receiver>
+   <slot>__OnAdvancedSet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>900</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>929</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>__OnMlogDoubleClicked(QModelIndex)</slot>
+  <slot>__OnMlogAddrEdited()</slot>
+  <slot>__OnShowAdvancedSetting(bool)</slot>
+  <slot>__OnLogLevelChanged(QString)</slot>
+  <slot>__OnAdvancedSet()</slot>
+ </slots>
+</ui>
